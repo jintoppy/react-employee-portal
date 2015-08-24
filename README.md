@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ReactStarter
 ====
 
@@ -26,3 +27,7 @@ Click [here](https://github.com/StephenGrider/ReactStarter/releases) then downlo
 	> npm install
 	> gulp
 ```
+=======
+# react-employee-portal
+React app for training purpose
+>>>>>>> f58955a8719b9c12c28c93c6a4c69424540cc803
