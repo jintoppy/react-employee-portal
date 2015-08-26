@@ -43,12 +43,23 @@ module.exports = React.createClass({
   },
   render: function() {
     var rows = this.state.users.map(function(item, index){
-        return <ListItem key={index} item={item} onDelete={this.deleteEmployee.bind(this,item.empnumber)} />
+        return <ListItem 
+                key={index} 
+                item={item}
+                onDelete={this.deleteEmployee.bind(this,item.empnumber)}
+               />
     }.bind(this));
     return (
-        <div className="employee-list">
+        <table className="table">
+          <thead>
+            <th>Name</th>
+            <th>View Details</th>
+            <th>Delete</th>
+          </thead>
+          <tbody>
             {rows}
-        </div>
+          </tbody>
+        </table>
 
         )
   }

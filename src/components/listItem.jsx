@@ -5,14 +5,14 @@ var Link = Router.Link;
 module.exports = React.createClass({
   render: function() {
     return (
-            <div className="employee-row">
-              {this.props.item.name}
-              <Link to={"/employeedetails/"+this.props.item.empnumber} className="navbar-brand" >
+            <tr className="employee-row">
+              <td>{this.props.item.name}</td>
+              <td><Link to={"/employeedetails/"+this.props.item.empnumber} className="navbar-brand" >
                     ViewDetails
-              </Link>
-              <button onClick={this.props.onDelete}>Delete</button>
-
-            </div>
+              </Link></td>
+              <td><button onClick={this.props.onDelete}>Delete</button>
+              </td>
+            </tr>
         )
   }
 });

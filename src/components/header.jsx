@@ -13,9 +13,9 @@ module.exports = React.createClass({
 
 
                 <ul className="nav navbar-nav navbar-right">
-                    <li>
+                    <Link to="/addemployee">
                       Add Employee
-                    </li> 
+                    </Link> 
                 </ul>
             </div>
         </nav>)
