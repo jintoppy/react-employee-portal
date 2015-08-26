@@ -1,5 +1,6 @@
 var React = require('react');
 var Header = require('./header');
+var List = require('./list');
 
 module.exports = React.createClass({
   render: function() {
@@ -13,7 +14,7 @@ module.exports = React.createClass({
         return this.props.children;
     }
     else{
-        // return <List />
+        return <List />
     }
   }
 });
