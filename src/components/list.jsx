@@ -15,14 +15,14 @@ var USERLIST = [
 ];
 
 module.exports = React.createClass({
-  deleteEmployee: function(empId){
-    var employees = this.getEmployees();
-    var filtered = _.reject(employees, function(employee){
-        return employee.empnumber == empId;
+  deleteEmployee:function(empId){
+    var employees = getEmployees();
+    var filtered = _.reject(employees,function(empnumber){
+      return employees.empnumber = empId;
     });
-    localStorage.setItem('accion_employees', JSON.stringify(filtered));
+    localStorage.setItem('accion_employees',JSON.stringify(filtered));
     this.setState({
-        users: filtered
+      users
     });
   },
   getEmployees: function(){

@@ -1,5 +1,6 @@
 var React = require('react');
 var Navigation = require('react-router').Navigation;
+var _ = require('lodash');
 
 module.exports = React.createClass({
 	mixins: [Navigation],
@@ -28,13 +29,28 @@ module.exports = React.createClass({
 		};
 		this.addEmployee(newEmp);
 	},
-	addEmployee: function(emp){	
+
+
+	onFormSubmit:function(event){
+		event.preventDefault();
+		var name_new = this.refs.name.getDOMNode().value,
+		age_new = this.refs.age.getDOMNode().value;
+		var newEmp = {
+			name:name_new,
+			age:age_new			
+		};
+		this.addEmployee(newEmp);
+	},
+	addEmployee:function(emp){
+		emp.empnumber = _.uniqueId();
 		var employees = localStorage.getItem('accion_employees');
-	    if(employees){
-	        employees = JSON.parse(employees);
-	        employees.push(emp);
-	        localStorage.setItem('accion_employees', JSON.stringify(employees));
-	        this.transitionTo('/');
-	    }
+		if(employees){
+			employees = JSON.parse(employees);
+			employees.push(emp);
+			localStorage.setItem('accion_employees',JSON.stringify(employees));
+			this.transitionTo('/');
+		}
+		
 	}
+	
 });

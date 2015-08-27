@@ -7,7 +7,6 @@ var Main = require('./components/main');
 var EmployeeDetails = require('./components/employeeDetails');
 var AddEmployee = require('./components/addEmployee');
 
-
 module.exports = (
   <Router history={new HashHistory.default}>
     <Route path="/" component={Main} >
